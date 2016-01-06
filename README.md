@@ -1,5 +1,6 @@
 # nativescript-geolocation
 
+<<<<<<< HEAD
 Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
 
 Then describe what's the purpose of your plugin. 
@@ -38,3 +39,11 @@ Describe your plugin methods and properties here. See [nativescript-feedback](ht
 ## License
 
 Apache License Version 2.0, January 2004
+=======
+Steps to compile the plugin.
+
+$ npm install
+$ grunt
+
+This will produce a `dist` folder based on all JavaScript files within `source` folder. Values inside `source/package.json` controls the number of plugin version.
+>>>>>>> Update README.md
