@@ -1,28 +1,24 @@
-import { Observable } from 'tns-core-modules/data/observable';
-import * as app from 'tns-core-modules/application';
-import * as dialogs from 'tns-core-modules/ui/dialogs';
+import { Location as LocationDef } from "./location";
 
-export class Common extends Observable {
-  public message: string;
+export class Location implements LocationDef {
+  public latitude: number;
+  public longitude: number;
 
-  constructor() {
-    super();
-    this.message = Utils.SUCCESS_MSG();
-  }
+  public altitude: number;
 
-  public greet() {
-    return "Hello, NS";
-  }
+  public horizontalAccuracy: number;
+  public verticalAccuracy: number;
+
+  public speed: number; // in m/s ?
+
+  public direction: number; // in degrees
+
+  public timestamp: Date;
+
+  public android: android.location.Location;  // android Location
+  public ios: CLLocation;      // iOS native location
 }
 
-export class Utils {
-  public static SUCCESS_MSG(): string {
-    let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}.`;
-
-    setTimeout(() => {
-      dialogs.alert(`${msg} For real. It's really working :)`).then(() => console.log(`Dialog closed.`));
-    }, 2000);
-
-    return msg;
-  }
-}
+export const defaultGetLocationTimeout = 5 * 60 * 1000; // 5 minutes
+export const minRangeUpdate = 0.1; // 0 meters
+export const minTimeUpdate = 1 * 60 * 1000; // 1 minute

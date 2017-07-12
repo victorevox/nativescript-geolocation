@@ -1,9 +1,8 @@
 {
     "name": "nativescript-geolocation",
-    "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "version": "3.0.0",
+    "description": "Provides API for getting and monitoring location for NativeScript app.",
     "main": "geolocation",
-    "typings": "index.d.ts",
     "nativescript": {
         "platforms": {
             "android": "3.0.0",
@@ -23,7 +22,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/tbozhikov/nativescript-geolocation.git"
+        "url": "https://github.com/NativeScript/nativescript-geolocation.git"
     },
     "keywords": [
         "NativeScript",
@@ -31,18 +30,15 @@
         "Android",
         "iOS"
     ],
-    "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
-    },
+    "author": "NativeScript Team",
     "bugs": {
-        "url": "https://github.com/tbozhikov/nativescript-geolocation/issues"
+        "url": "https://github.com/NativeScript/nativescript-geolocation/issues"
     },
     "license": "Apache-2.0",
-    "homepage": "https://github.com/tbozhikov/nativescript-geolocation",
+    "homepage": "https://github.com/NativeScript/nativescript-geolocation",
     "readmeFilename": "README.md",
     "peerDependencies": {
-        "tns-core-modules": "^3.0.0"
+        "tns-core-modules": "^3.0.0 || >3.2.0-"
     },
     "devDependencies": {
         "tns-core-modules": "^3.0.0",
