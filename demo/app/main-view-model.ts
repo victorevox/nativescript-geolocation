@@ -1,14 +1,21 @@
-import { Observable } from 'tns-core-modules/data/observable';
-import { Geolocation } from 'nativescript-geolocation';
+import * as geolocation from "nativescript-geolocation";
+import { Observable } from "data/observable";
+import { ObservableArray } from "data/observable-array";
 
-export class HelloWorldModel extends Observable {
-  public message: string;
-  private geolocation: Geolocation;
+export class MainViewModel extends Observable {
+    private _locations: ObservableArray<geolocation.Location>;
 
-  constructor() {
-    super();
+    public get locations(): ObservableArray<geolocation.Location> {
+        if (!this._locations) {
+            this._locations = new ObservableArray<geolocation.Location>();
+        }
+        return this._locations;
+    }
 
-    this.geolocation = new Geolocation();
-    this.message = this.geolocation.message;
-  }
+    public set locations(value: ObservableArray<geolocation.Location>) {
+        if (this._locations !== value) {
+            this._locations = value;
+            this.notifyPropertyChange('locations', value)
+        }
+    }
 }
