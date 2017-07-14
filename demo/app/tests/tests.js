@@ -1,12 +1,11 @@
-var Geolocation = require("nativescript-geolocation").Geolocation;
-var geolocation = new Geolocation();
+var Location = require("nativescript-geolocation").Location;
 
-describe("greet function", function() {
-    it("exists", function() {
-        expect(geolocation.greet).toBeDefined();
-    });
+describe("location", function () {
+    it("can be instantiated", function () {
+        expect(function () {
+            return new Location();
+        }).not.toThrow();
 
-    it("returns a string", function() {
-        expect(geolocation.greet()).toEqual("Hello, NS");
+        expect(new Location()).toBeDefined();
     });
 });
