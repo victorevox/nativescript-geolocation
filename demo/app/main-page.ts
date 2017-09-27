@@ -19,6 +19,7 @@ export function enableLocationTap() {
     }
 }
 
+
 export function buttonGetLocationTap() {
     let location = geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.high, updateDistance: 0.1, maximumAge: 5000, timeout: 20000 })
         .then(function(loc) {
